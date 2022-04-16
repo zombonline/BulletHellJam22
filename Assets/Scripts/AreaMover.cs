@@ -31,9 +31,8 @@ public class AreaMover : MonoBehaviour
         {
             targetScaleX = Random.Range(scaleMin, scaleMax);
             targetScaleY = Random.Range(scaleMin, scaleMax);
-        }
-            targetPosition = new Vector2(Random.Range(-boundaryX, boundaryX) / (1 + (0.6f *targetScaleX)) ,Random.Range(-boundaryY, boundaryY) / (1 + (0.6f * targetScaleY)));
+            targetPosition = new Vector2(Random.Range(-boundaryX, boundaryX) / (1 + (0.06f * targetScaleX)), Random.Range(-boundaryY, boundaryY) / (1 + (0.06f * targetScaleY)));
             yield return new WaitForSeconds(Random.Range(minTime, maxTime));
-        
+        }
     }
 }

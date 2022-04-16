@@ -39,6 +39,8 @@ public class LineMover : MonoBehaviour
         else
         {
             line.SetPosition(1, pos1.position);
+            line.SetPosition(0, pos2.position);
+
         }
     }
 
