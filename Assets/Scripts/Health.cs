@@ -23,6 +23,10 @@ public class Health : MonoBehaviour
     {
         return health;
     }
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
     public void RemoveHealth(float amount)
     {
         health -= amount;
@@ -48,6 +52,7 @@ public class Health : MonoBehaviour
             spriteToFlash.enabled = true;
             yield return new WaitForSeconds(0.1f);
         }
+        canHit = true;
     }
 
 }

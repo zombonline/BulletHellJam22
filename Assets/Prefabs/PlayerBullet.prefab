@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5814670141378661406}
-  - component: {fileID: 1524461118998321934}
+  - component: {fileID: 3321745094981597151}
   - component: {fileID: 2469587055061513559}
   - component: {fileID: 6168182161259975620}
   - component: {fileID: 308652888408215644}
-  m_Layer: 9
-  m_Name: Bullet
+  m_Layer: 8
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524461118998321934
+--- !u!114 &3321745094981597151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

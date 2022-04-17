@@ -13,14 +13,14 @@ public class ShootBasicAtPlayer : MonoBehaviour
     private void Update()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        var direction = target.position - transform.position;
         bulletCooldownTime -= Time.deltaTime;
         if(bulletCooldownTime < 0)
         {
+            var direction = Vector2.Angle(transform.position, target.position);   
             bulletCooldownTime = bulletCooldown;
-            var newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
-                
+            var newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);      
+            newBullet.transform.rotation = new Quaternion(0,0, direction, 0);
+
         }
     }
 

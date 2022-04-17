@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5255742488770982798}
   - component: {fileID: 5935693440405865030}
   - component: {fileID: 1079987312}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,10 @@ MonoBehaviour:
   healthModified:
     m_PersistentCalls:
       m_Calls: []
+  invulnerableFrames: 0
+  invulnerabilityLength: 0
+  canHit: 1
+  spriteToFlash: {fileID: 0}
 --- !u!114 &5935693440405865030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6324938651270711512}
   - component: {fileID: 6324938651270711515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
