@@ -16,11 +16,11 @@ public class ShootBasicAtPlayer : MonoBehaviour
         bulletCooldownTime -= Time.deltaTime;
         if(bulletCooldownTime < 0)
         {
-            var direction = Vector2.Angle(transform.position, target.position);   
             bulletCooldownTime = bulletCooldown;
-            var newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);      
-            newBullet.transform.rotation = new Quaternion(0,0, direction, 0);
-
+            var direction = (target.position - transform.position);
+            var atan2 = Mathf.Atan2(direction.y, direction.x);
+            var newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            newBullet.transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
         }
     }
 

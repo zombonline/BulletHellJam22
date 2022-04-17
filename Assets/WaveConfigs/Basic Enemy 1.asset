@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ad8084de45c914bb362717df7614e2, type: 3}
-  m_Name: Basic Enemy
+  m_Name: Basic Enemy 1
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6324938651123267080, guid: 51e22c72710e65e43832c4550608a61d, type: 3}
-  pathPrefab: {fileID: 8922486616778087347, guid: 3693165da50c26c4e8e283a82f70ab68, type: 3}
+  pathPrefab: {fileID: 8820213472750420612, guid: e7cab14eee7b3304691aedc541a55b81, type: 3}
   timeBetweenSpawns: 1
   spawnRandomFactor: 0.3
   numberOfEnemies: 3

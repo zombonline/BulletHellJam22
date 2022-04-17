@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     float health;
     [SerializeField] UnityEvent healthModified;
 
-    [SerializeField] bool invulnerableFrames;
+    [SerializeField] bool isPlayer;
     [SerializeField] float invulnerabilityLength;
     public bool canHit = true;
     [SerializeField] SpriteRenderer spriteToFlash;
@@ -31,11 +31,21 @@ public class Health : MonoBehaviour
     {
         health -= amount;
         healthModified.Invoke();
-        if (invulnerableFrames)
+        if (isPlayer)
         {
             StartCoroutine(InvulnerabilityPeriod());
         }
+        if(health <= 0)
+        {
+            Die();
+        }
     }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
+
     public void AddHealth(float amount)
     {
         health += amount;
