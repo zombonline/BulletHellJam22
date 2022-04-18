@@ -43,7 +43,10 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        if (!isPlayer)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void AddHealth(float amount)
