@@ -7,7 +7,7 @@ public class LevelTimer : MonoBehaviour
     [SerializeField] float levelLength = 60;
     public static bool levelRunning = false;
     float timeRemaining;
-    [SerializeField] Canvas levelFinishCanvas;
+    [SerializeField] static Canvas levelFinishCanvas;
     
 
     private void Awake()
@@ -26,15 +26,17 @@ public class LevelTimer : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             if(timeRemaining <= 0)
             {
-                FindObjectOfType<EnemySpawner>().isSpawning = false;
+                EndLevel();
+            }
+        }
+    }
+    public static void EndLevel()
+    {
+        FindObjectOfType<EnemySpawner>().isSpawning = false;
                 if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
                 {
                     levelRunning = false;
                     levelFinishCanvas.gameObject.SetActive(true);
                 }
-            }
-        }
-
-        
     }
 }

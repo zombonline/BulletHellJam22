@@ -26,6 +26,8 @@ public class EnemyPathing : MonoBehaviour
     }
     private void MoveOnPath()
     {
+        if(LevelTimer.levelRunning)
+        {
         if (waypointIndex <= waypoints.Count -1)
         {
             var targetPosition = waypoints[waypointIndex].transform.position;
@@ -40,6 +42,7 @@ public class EnemyPathing : MonoBehaviour
         else
         {
               Destroy(gameObject);
+        }
         }
     }
 }

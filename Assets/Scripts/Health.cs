@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] float invulnerabilityLength;
     public bool canHit = true;
     [SerializeField] SpriteRenderer spriteToFlash;
-
+    [SerializeField] ParticleSystem deathParticles;
     private void Start()
     {
         health = maxHealth;
@@ -31,14 +31,15 @@ public class Health : MonoBehaviour
     {
         health -= amount;
         healthModified.Invoke();
-        if (isPlayer)
-        {
-            StartCoroutine(InvulnerabilityPeriod());
-        }
         if(health <= 0)
         {
             Die();
         }
+        else if (isPlayer)
+        {
+            StartCoroutine(InvulnerabilityPeriod());
+        }
+
     }
 
     private void Die()
@@ -47,6 +48,20 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else
+        {
+            LevelTimer.levelRunning = false;
+            spriteToFlash.enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
+            StartCoroutine(LoadGameOver());
+        }
+    }
+
+    IEnumerator LoadGameOver()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneLoader.LoadGameOver();
     }
 
     public void AddHealth(float amount)

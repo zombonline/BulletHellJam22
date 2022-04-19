@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash()
     {
         lockedMovement = true;
+        GetComponent<BoxCollider2D>().enabled = false;
         rb.velocity = direction.normalized * (speed * speedMultiplier);
         for(int i = 0; i <spriteGhostAmount; i++)
         {
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(dashRecoveryLength);
+        GetComponent<BoxCollider2D>().enabled = true;
         lockedMovement = false;
     }
 }

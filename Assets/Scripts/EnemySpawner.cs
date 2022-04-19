@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
                 yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
             }
         }
+        
     }
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig)
     {
@@ -41,5 +42,6 @@ public class EnemySpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
+        yield return new WaitForSeconds(waveConfig.GetDelayBeforeNextWave());
     }
 }

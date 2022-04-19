@@ -12,6 +12,8 @@ public class WaveConfig : ScriptableObject
     [SerializeField] float spawnRandomFactor = 0.3f;
     [SerializeField] int numberOfEnemies = 5;
     [SerializeField] float moveSpeed = 2f;
+
+    [SerializeField] float delayBeforeNextWave = 1f;
     #endregion
 
     #region public get methods for variables
@@ -47,6 +49,10 @@ public class WaveConfig : ScriptableObject
     public float GetMoveSpeed()
     {
         return moveSpeed;
+    }
+    public float GetDelayBeforeNextWave()
+    {
+        return delayBeforeNextWave;
     }
     #endregion
 }

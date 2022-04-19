@@ -8,8 +8,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] float activeTime;
     void Update()
     {
+        if(LevelTimer.levelRunning)
+        {
         transform.position += transform.right * Time.deltaTime * speed;
-
+        }
         Destroy(gameObject, activeTime);
     }
 }
