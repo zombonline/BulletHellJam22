@@ -96,7 +96,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  invulnerableFrames: 1
+  isPlayer: 0
   invulnerabilityLength: 20
   canHit: 1
   spriteToFlash: {fileID: 7600032934553721855}
@@ -127,7 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30781c489df6044dbb95573c77af49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
+  speedMultiplier: 3
+  dashLength: 0.2
+  dashRecoveryLength: 0.2
+  spriteGhostAmount: 4
+  ghost: {fileID: 5047926896059010916, guid: caa3c342502bd7b448989c135dc8c852, type: 3}
 --- !u!50 &7600032933785025005
 Rigidbody2D:
   serializedVersion: 4

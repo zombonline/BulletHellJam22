@@ -27,26 +27,29 @@ public class GameCanvas : MonoBehaviour
 
     private void DirectorDuringGameplay()
     {
-        if (area.playerInArea)
+        if (LevelTimer.levelRunning)
         {
-            directorImage.sprite = directorHappy;
-            directorAngryTextCountdown = directorAngryTextCountdownTime;
-            directorSpeech.enabled = false;
-            directorText.enabled = false;
-        }
-        else
-        {
-            directorImage.sprite = directorAngry;
-            directorAngryTextCountdown -= Time.deltaTime;
-            if (directorAngryTextCountdown < 0)
+            if (area.playerInArea)
             {
-                if (directorSpeech.enabled != false)
+                directorImage.sprite = directorHappy;
+                directorAngryTextCountdown = directorAngryTextCountdownTime;
+                directorSpeech.enabled = false;
+                directorText.enabled = false;
+            }
+            else
+            {
+                directorImage.sprite = directorAngry;
+                directorAngryTextCountdown -= Time.deltaTime;
+                if (directorAngryTextCountdown < 0)
                 {
-                    return;
+                    if (directorSpeech.enabled != false)
+                    {
+                        return;
+                    }
+                    directorSpeech.enabled = true;
+                    directorText.enabled = true;
+                    directorText.text = directorDialogue[Random.Range(0, directorDialogue.Length)].ToString();
                 }
-                directorSpeech.enabled = true;
-                directorText.enabled = true;
-                directorText.text = directorDialogue[Random.Range(0, directorDialogue.Length)].ToString();
             }
         }
     }

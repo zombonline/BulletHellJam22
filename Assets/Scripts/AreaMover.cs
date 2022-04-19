@@ -21,8 +21,11 @@ public class AreaMover : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
-        transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(targetScaleX, targetScaleY, 0), Time.deltaTime * speed);
+        if (LevelTimer.levelRunning)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
+            transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(targetScaleX, targetScaleY, 0), Time.deltaTime * speed);
+        }
 
     }
     IEnumerator RandomPositionAndScale()

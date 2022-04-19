@@ -11,19 +11,22 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator Start()
     {
-        do
-        {
-            yield return StartCoroutine(SpawnAllWaves());
-        }
-        while (looping);
+            do
+            {
+                yield return StartCoroutine(SpawnAllWaves());
+            }
+            while (looping);
     }
 
     private IEnumerator SpawnAllWaves()
     {
-        for (int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
+        if (LevelTimer.levelRunning)
         {
-            var currentWave = waveConfigs[waveIndex];
-            yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+            for (int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
+            {
+                var currentWave = waveConfigs[waveIndex];
+                yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+            }
         }
     }
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig)

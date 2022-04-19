@@ -5,8 +5,10 @@ using UnityEngine;
 public class LevelTimer : MonoBehaviour
 {
     [SerializeField] float levelLength = 60;
-    bool levelStarted = false;
+    public static bool levelRunning = false;
     float timeRemaining;
+    [SerializeField] Canvas levelFinishCanvas;
+    
 
     private void Awake()
     {
@@ -17,17 +19,22 @@ public class LevelTimer : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            levelStarted = true;
-            FindObjectOfType<Area>().timeStarted = true;
+            levelRunning = true;
         }
-        if(levelStarted)
+        if(levelRunning)
         {
             timeRemaining -= Time.deltaTime;
             if(timeRemaining <= 0)
             {
-                FindObjectOfType<Area>().timeStarted = false;
-                FindObjectOfType<EnemySpawner>().
+                FindObjectOfType<EnemySpawner>().isSpawning = false;
+                if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                {
+                    levelRunning = false;
+                    levelFinishCanvas.gameObject.SetActive(true);
+                }
             }
         }
+
+        
     }
 }

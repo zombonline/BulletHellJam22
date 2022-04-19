@@ -11,14 +11,17 @@ public class PlayerShooter : MonoBehaviour
 
     private void Update()
     {
-        bulletCooldownTime -= Time.deltaTime;
-        if(Input.GetMouseButton(0) && bulletCooldownTime < 0)
+        if (LevelTimer.levelRunning)
         {
-            bulletCooldownTime = bulletCooldownAmount;
-            var direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
-            var atan2 = Mathf.Atan2(direction.y, direction.x);
-            var newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            newBullet.transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
+            bulletCooldownTime -= Time.deltaTime;
+            if (Input.GetMouseButton(0) && bulletCooldownTime < 0)
+            {
+                bulletCooldownTime = bulletCooldownAmount;
+                var direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+                var atan2 = Mathf.Atan2(direction.y, direction.x);
+                var newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                newBullet.transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
+            }
         }
     }
 }
