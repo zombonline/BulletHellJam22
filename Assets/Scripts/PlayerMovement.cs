@@ -11,40 +11,58 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Dash")]
     [SerializeField] float speedMultiplier;
-    [SerializeField] float dashLength, dashRecoveryLength, spriteGhostAmount;
+    [SerializeField] float dashLength, dashRecoveryLength, spriteGhostAmount, dashCooldown;
+    float dashCooldownTime;
     [SerializeField] GameObject ghost;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        dashCooldownTime = dashCooldown;
     }
     private void Update()
     {
         if (LevelTimer.levelRunning)
         {
-            if (!lockedMovement)
-            {
-                var moveX = Input.GetAxisRaw("Horizontal");
-                var moveY = Input.GetAxisRaw("Vertical");
-                direction = new Vector2(moveX, moveY);
-                rb.velocity = direction.normalized * speed;
-            }
-
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(Dash());
-            }
+            Move();
+            CheckForDash();
         }
         else
         {
             rb.velocity = Vector2.zero;
+        }
+
+        dashCooldownTime -= Time.deltaTime;
+
+    }
+
+    private void CheckForDash()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (direction != Vector2.zero && dashCooldownTime <0)
+            {
+                dashCooldown = dashCooldownTime;
+                StartCoroutine(Dash());
+            }
+        }
+    }
+
+    private void Move()
+    {
+        if (!lockedMovement)
+        {
+            var moveX = Input.GetAxisRaw("Horizontal");
+            var moveY = Input.GetAxisRaw("Vertical");
+            direction = new Vector2(moveX, moveY);
+            rb.velocity = direction.normalized * speed;
         }
     }
 
     IEnumerator Dash()
     {
         lockedMovement = true;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Health>().canHit = false;
         rb.velocity = direction.normalized * (speed * speedMultiplier);
         for(int i = 0; i <spriteGhostAmount; i++)
         {
@@ -53,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(dashRecoveryLength);
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<Health>().canHit = true;
         lockedMovement = false;
     }
 }

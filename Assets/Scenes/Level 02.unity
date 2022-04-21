@@ -796,6 +796,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8401945471931835686, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
+      propertyPath: directorSpeeches.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401945471931835686, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
+      propertyPath: directorSpeeches.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2160500a5f271c34cacf8dd129b263ff, type: 2}
     - target: {fileID: 8401945471931835687, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

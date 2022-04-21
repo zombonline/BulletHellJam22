@@ -12,12 +12,11 @@ public class LevelTimer : MonoBehaviour
 
     private void Awake()
     {
-        
         timeRemaining = levelLength;
     }
     private void Update()
     {
-        if(Input.anyKeyDown)
+        if(Input.anyKeyDown && FindObjectOfType<GameCanvas>().directorSpeechDone)
         {
             levelRunning = true;
         }
@@ -33,10 +32,11 @@ public class LevelTimer : MonoBehaviour
     public void EndLevel()
     {
         FindObjectOfType<EnemySpawner>().isSpawning = false;
-                if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-                {
-                    levelRunning = false;
-                    levelFinishCanvas.gameObject.SetActive(true);
-                }
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            levelRunning = false;
+            levelFinishCanvas.gameObject.SetActive(true);
+            FindObjectOfType<MusicPlayer>().LowerVolume();
+        }
     }
 }

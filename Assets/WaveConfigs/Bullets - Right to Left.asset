@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ad8084de45c914bb362717df7614e2, type: 3}
+  m_Name: Bullets - Right to Left
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6566870581331956034, guid: fc9b7642fe6245947a5f75c617229858, type: 3}
+  pathPrefab: {fileID: 1000961470477965165, guid: 793e24fbec326fe479381483754b99b7, type: 3}
+  timeBetweenSpawns: 2
+  spawnRandomFactor: 0.3
+  numberOfEnemies: 1
+  moveSpeed: 7
+  delayBeforeNextWave: 1

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ad8084de45c914bb362717df7614e2, type: 3}
-  m_Name: Rotating Enemy Wave
+  m_Name: Rotating Enemy Bottom Screen Left to Right
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 9097635471393486987, guid: 70591bd60ab35a9428869409ddd984c9, type: 3}
   pathPrefab: {fileID: 1314525270503367543, guid: 9766e9d4f1273fe4e8eccf3166ca88eb, type: 3}

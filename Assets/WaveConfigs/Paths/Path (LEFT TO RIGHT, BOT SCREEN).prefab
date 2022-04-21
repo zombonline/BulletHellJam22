@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8382653047439866268}
   m_Layer: 0
-  m_Name: Enemy Path 3 (LEFT TO RIGHT, BOTTOM OF SCREEN)
+  m_Name: Path (LEFT TO RIGHT, BOT SCREEN)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

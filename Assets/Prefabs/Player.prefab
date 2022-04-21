@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  speedMultiplier: 3
+  speedMultiplier: 2.5
   dashLength: 0.2
   dashRecoveryLength: 0.1
   spriteGhostAmount: 4
+  dashCooldown: 3
   ghost: {fileID: 5047926896059010916, guid: caa3c342502bd7b448989c135dc8c852, type: 3}
 --- !u!50 &7600032933785025005
 Rigidbody2D:
@@ -237,9 +238,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -689820463
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1083950479671948815, guid: 1d3303cebb151004c9c9f924fc44b8b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

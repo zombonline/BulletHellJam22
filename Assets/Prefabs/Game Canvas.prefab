@@ -162,10 +162,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 70c6e6324886fbb40b54856b3c1642d6, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
@@ -352,7 +352,10 @@ MonoBehaviour:
   - {fileID: 4900000, guid: a57745a1e75266d43bf839160652a1f5, type: 3}
   - {fileID: 4900000, guid: 2af67c7ced8fec0408798fce96b71cff, type: 3}
   - {fileID: 4900000, guid: c1a6aaaa99ec0684ebec43853352f405, type: 3}
-  directorAngryTextCountdownTime: 5
+  directorAngryTextCountdownTime: 2.5
+  directorSpeechDone: 0
+  directorSpeeches:
+  - {fileID: 11400000, guid: 7fdd567345aac3445a03a86d3b869df2, type: 2}
 --- !u!223 &8401945471931835684
 Canvas:
   m_ObjectHideFlags: 0

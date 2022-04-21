@@ -52,7 +52,7 @@ public class Health : MonoBehaviour
         {
             spriteToFlash.color = Color.red;
             yield return new WaitForSeconds(0.1f);
-            spriteToFlash.color = standardColor;
+            spriteToFlash.color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
     }

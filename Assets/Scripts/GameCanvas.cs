@@ -15,6 +15,10 @@ public class GameCanvas : MonoBehaviour
     [SerializeField] TextAsset[] directorDialogue;
     [SerializeField] float directorAngryTextCountdownTime = 5;
     float directorAngryTextCountdown;
+
+    public bool directorSpeechDone = false;
+    [SerializeField] DirectorSpeech[] directorSpeeches;
+    int clicks = 0;
     private void Awake()
     {
         area = FindObjectOfType<Area>();
@@ -23,6 +27,33 @@ public class GameCanvas : MonoBehaviour
     {
         DisplayScorePercentage();
         DirectorDuringGameplay();
+        DirectorBeforeGameplay();
+    }
+
+
+    private void DirectorBeforeGameplay()
+    {
+        if(directorSpeeches.Length > clicks && !directorSpeechDone)
+        {
+            directorImage.sprite = directorSpeeches[clicks].directorSprite;
+            directorText.text = directorSpeeches[clicks].speech.ToString();
+            directorSpeech.enabled = true;
+            directorText.enabled = true;
+        }
+        if(Input.anyKeyDown && !directorSpeechDone)
+        {
+            if((clicks + 1) >= directorSpeeches.Length)
+            {
+                directorSpeechDone = true;
+                directorSpeech.enabled = false;
+                directorText.enabled = false;
+            }
+            else
+            {
+                clicks++;
+            }
+        }
+
     }
 
     private void DirectorDuringGameplay()

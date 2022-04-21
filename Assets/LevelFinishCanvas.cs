@@ -29,6 +29,7 @@ public class LevelFinishCanvas : MonoBehaviour
     public void NextButton()
     {
         FindObjectOfType<GameSession>().totalScore += totalPay;
+        FindObjectOfType<MusicPlayer>().ResetVolume();
         SceneLoader.LoadNextScene();
     }
     
