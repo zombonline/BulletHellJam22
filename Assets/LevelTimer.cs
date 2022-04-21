@@ -7,14 +7,14 @@ public class LevelTimer : MonoBehaviour
     [SerializeField] float levelLength = 60;
     public static bool levelRunning = false;
     float timeRemaining;
-    [SerializeField] static Canvas levelFinishCanvas;
+    [SerializeField] Canvas levelFinishCanvas;
     
 
     private void Awake()
     {
+        
         timeRemaining = levelLength;
     }
-
     private void Update()
     {
         if(Input.anyKeyDown)
@@ -30,7 +30,7 @@ public class LevelTimer : MonoBehaviour
             }
         }
     }
-    public static void EndLevel()
+    public void EndLevel()
     {
         FindObjectOfType<EnemySpawner>().isSpawning = false;
                 if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)

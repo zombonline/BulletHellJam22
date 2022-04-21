@@ -31,15 +31,30 @@ public class Health : MonoBehaviour
     {
         health -= amount;
         healthModified.Invoke();
+        if (isPlayer)
+        {
+            StartCoroutine(InvulnerabilityPeriod());
+        }
+        else
+        {
+            StartCoroutine(SpriteRed());
+        }
         if(health <= 0)
         {
             Die();
         }
-        else if (isPlayer)
-        {
-            StartCoroutine(InvulnerabilityPeriod());
-        }
+    }
 
+    IEnumerator SpriteRed()
+    {
+        var standardColor = spriteToFlash.color;
+        for(int i = 0; i < invulnerabilityLength / 2; i++)
+        {
+            spriteToFlash.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            spriteToFlash.color = standardColor;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private void Die()
@@ -82,5 +97,4 @@ public class Health : MonoBehaviour
         }
         canHit = true;
     }
-
 }

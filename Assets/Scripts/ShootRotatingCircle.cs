@@ -21,19 +21,14 @@ public class ShootRotatingCircle : MonoBehaviour
             var newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
             var newBullet1 = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            newBullet1.transform.rotation = new Quaternion(newBullet1.transform.rotation.x,
-            newBullet1.transform.rotation.y,
-            newBullet1.transform.rotation.z + 45, newBullet1.transform.rotation.w);
+            newBullet1.transform.Rotate(new Vector3(0,0,90));
             
             var newBullet2 = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            newBullet2.transform.rotation = new Quaternion(newBullet1.transform.rotation.x,
-            newBullet2.transform.rotation.y,
-            newBullet2.transform.rotation.z + 90, newBullet2.transform.rotation.w);
+            newBullet2.transform.Rotate(new Vector3(0,0,180));
 
             var newBullet3 = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            newBullet3.transform.rotation = new Quaternion(newBullet1.transform.rotation.x,
-            newBullet3.transform.rotation.y,
-            newBullet3.transform.rotation.z + 135, newBullet3.transform.rotation.w);
+            newBullet3.transform.Rotate(new Vector3(0,0,-90));
+
         }
         }
 
