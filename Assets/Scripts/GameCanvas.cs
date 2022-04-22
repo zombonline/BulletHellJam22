@@ -60,26 +60,29 @@ public class GameCanvas : MonoBehaviour
     {
         if (LevelTimer.levelRunning)
         {
-            if (area.playerInArea)
+            if (area != null)
             {
-                directorImage.sprite = directorHappy;
-                directorAngryTextCountdown = directorAngryTextCountdownTime;
-                directorSpeech.enabled = false;
-                directorText.enabled = false;
-            }
-            else
-            {
-                directorImage.sprite = directorAngry;
-                directorAngryTextCountdown -= Time.deltaTime;
-                if (directorAngryTextCountdown < 0)
+                if (area.playerInArea)
                 {
-                    if (directorSpeech.enabled != false)
+                    directorImage.sprite = directorHappy;
+                    directorAngryTextCountdown = directorAngryTextCountdownTime;
+                    directorSpeech.enabled = false;
+                    directorText.enabled = false;
+                }
+                else
+                {
+                    directorImage.sprite = directorAngry;
+                    directorAngryTextCountdown -= Time.deltaTime;
+                    if (directorAngryTextCountdown < 0)
                     {
-                        return;
+                        if (directorSpeech.enabled != false)
+                        {
+                            return;
+                        }
+                        directorSpeech.enabled = true;
+                        directorText.enabled = true;
+                        directorText.text = directorDialogue[Random.Range(0, directorDialogue.Length)].ToString();
                     }
-                    directorSpeech.enabled = true;
-                    directorText.enabled = true;
-                    directorText.text = directorDialogue[Random.Range(0, directorDialogue.Length)].ToString();
                 }
             }
         }
@@ -87,7 +90,10 @@ public class GameCanvas : MonoBehaviour
 
     private void DisplayScorePercentage()
     {
-        var score = (area.timeInArea / area.totalTime) * 100;
-        scoreText.text = score.ToString("00") + "%";
+        if (area != null)
+        {
+            var score = (area.timeInArea / area.totalTime) * 100;
+            scoreText.text = score.ToString("00") + "%";
+        }
     }
 }

@@ -10,6 +10,8 @@ public class EnemyPathing : MonoBehaviour
     int waypointIndex = 0;
     #endregion
 
+    [SerializeField] bool stationary;
+
     private void Start()
     {
         waypoints = waveConfig.GetWaypoints();
@@ -26,6 +28,10 @@ public class EnemyPathing : MonoBehaviour
     }
     private void MoveOnPath()
     {
+        if (stationary)
+        {
+            return;
+        }
         if(LevelTimer.levelRunning)
         {
         if (waypointIndex <= waypoints.Count -1)
