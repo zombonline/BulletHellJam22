@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area
       objectReference: {fileID: 0}
+    - target: {fileID: 164230814454456480, guid: c6cf9b61167e8e14fb2df8a5324ab1e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6cf9b61167e8e14fb2df8a5324ab1e8, type: 3}
 --- !u!1001 &1474816853662505949
@@ -626,63 +630,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc6599e568cf0eb40bab60650202a722, type: 3}
---- !u!1001 &4212146452193783908
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4779148440153444378, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_Name
-      value: Boss Spawn Point
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117510231910969795, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 515cbd7b8f5b48f4a85091745c36a608, type: 3}
 --- !u!1001 &5070556077942743946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,13 +816,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8401945471536605415, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8401945471931835683, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8401945471931835686, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
+      propertyPath: directorSpeechDone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401945471931835686, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
       propertyPath: directorSpeeches.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8401945471931835686, guid: 8e37e9c64c2f07748943a1849066c33a, type: 3}
       propertyPath: directorSpeeches.Array.data[1]
